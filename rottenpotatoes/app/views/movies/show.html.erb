@@ -3,6 +3,10 @@
 
 <ul id="details">
   <li>
+    Director:
+    <%= @movie.director %>
+  </li>
+  <li>
     Rating:
     <%= @movie.rating %>
   </li>
@@ -11,6 +15,8 @@
     <%= @movie.release_date.strftime("%B %d, %Y") %>
   </li>
 </ul>
+
+<%= link_to 'Find Movies With Same Director', director_path(@movie), :class  => 'link-primary'  %>
 
 <h3>Description:</h3>
 <p id="description">
@@ -22,3 +28,4 @@
   <%= link_to 'Delete', movie_path(@movie), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
   <%= link_to 'Back to movie list', movies_path, :class => 'btn btn-primary col-2' %>
 </div>
+
