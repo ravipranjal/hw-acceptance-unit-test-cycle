@@ -1,8 +1,42 @@
-..................
+
+MoviesController
+  new test
+    should do nothing
+  index page
+    sorting
+      should be able to sort the movies by title from params
+      should be able to sort the movies by title with session
+      should be able to sort the movies by release_date with params
+  show movie
+    should show the selected movie
+  create movie
+    should be able to create a movie
+  edit movie
+    should to able to edit a movie
+  update movie
+    should be able to update a movie
+  delete movie
+    should be able to delete a movie
+  Search movies by the same director
+    should search for similar movies - happy path
+    should search for similar movies - sad path
+
+Movie
+  responds to movie_with_id
+  responds to with_ratings
+  responds to similar_to
+  movie with ratings
+    should return movie only with given ratings
+  movie retirieval with id
+    should return the movie with given id
+  movie of same director - happy path.
+    should have the movies with same director and should not have movie with different director
+  movie of same diretor - sad path.
+    movie with no director should return nil
 
 1 deprecation warning total
 
-Finished in 0.20406 seconds (files took 2.82 seconds to load)
+Finished in 0.41907 seconds (files took 1.55 seconds to load)
 18 examples, 0 failures
 
 Coverage report generated for RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 68 / 69 LOC (98.55%) covered.

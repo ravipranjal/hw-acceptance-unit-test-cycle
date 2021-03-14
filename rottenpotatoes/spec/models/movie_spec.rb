@@ -42,7 +42,7 @@ describe Movie do
     end
     
     describe "movie of same director - happy path." do
-        it "number of movies with same director matches the expected value" do
+        it "should have the movies with same director and should not have movie with different director" do
             Movie.create('title': 'movie1', 'director': 'director1')
             id_1 =  Movie.where('director': 'director1').pluck('id')[0]
             Movie.create('title': 'movie2', 'director': 'director1') 
@@ -54,7 +54,7 @@ describe Movie do
     end
   
     describe "movie of same diretor - sad path." do
-        it "number of movies with same director matches the expected value" do
+        it "movie with no director should return nil" do
             Movie.create('title': 'movie1', 'director': "")
             id_1 =  (Movie.where('director': 'director').pluck('id')[0]).to_s
             expect(Movie.similar_to(id_1)).to eq("")
